@@ -59,6 +59,46 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.http4k</groupId>
+            <artifactId>http4k-core</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.http4k</groupId>
+            <artifactId>http4k-client-okhttp</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kittinunf.fuel</groupId>
+            <artifactId>fuel</artifactId>
+            <version>1.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kittinunf.fuel</groupId>
+            <artifactId>fuel-rxjava</artifactId>
+            <version>1.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kittinunf.fuel</groupId>
+            <artifactId>fuel-gson</artifactId>
+            <version>1.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kittinunf.fuel</groupId>
+            <artifactId>fuel-jackson</artifactId>
+            <version>1.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kittinunf.fuel</groupId>
+            <artifactId>fuel-moshi</artifactId>
+            <version>1.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-coroutines-core</artifactId>
+            <version>0.21</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -91,6 +131,9 @@
                 </executions>
                 <configuration>
                     <jvmTarget>1.8</jvmTarget>
+                    <args>
+                        <arg>-Xcoroutines=enable</arg>
+                    </args>
                 </configuration>
             </plugin>
             <plugin>
@@ -153,5 +196,12 @@
 
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
 
 </project>

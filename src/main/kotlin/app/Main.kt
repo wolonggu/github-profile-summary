@@ -36,6 +36,13 @@ fun main(args: Array<String>) {
     // add routes
     app.apply {
 
+        get("/movie/latest") { ctx ->
+            val response = MovieService.getMoviesLatest()
+            ctx.contentType("application/json");
+            ctx.result(response);
+
+        }
+
         get("/api/user/:user") { ctx ->
             val user = ctx.param("user")!!
             when (unrestricted || UserCtrl.hasStarredRepo(user)) {
